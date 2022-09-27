@@ -1,5 +1,6 @@
 class FlatsController < ApplicationController
   def index
+    @flats = Flat.all
   end
 
   def show
@@ -14,6 +15,6 @@ class FlatsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 end

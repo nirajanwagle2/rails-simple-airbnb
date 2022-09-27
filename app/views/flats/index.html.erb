@@ -1,2 +1,31 @@
-<h1>Flats#index</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
+<div class="container mt-5 mb-3 cards">
+  <div class="grid">
+    <% @flats.each do |flat| %>
+      <%# <div class="col-md-4"> %>
+        <div class="flex flex-column justify-content-between card p-3 mb-2 card-bg">
+          <div>
+            <div class="d-flex justify-content-between border-bottom pb-3">
+              <div class="d-flex flex-row align-items-center ">
+                <%# <div class="ms-2 c-details">
+                   <span>1 days ago</span>
+              </div> %>
+                <div class="ms-2 c-details">
+                  <h5><%= flat.name %>
+                  </h5>
+                  <h6><i class="fa-sharp fa-solid fa-location-dot fa-xl"></i> <%= flat.address %></h6>
+                </div>
+              </div>
+            </div>
+            <div class="mb-5 mt-3">
+              <h2 class="heading"><%= flat.price_per_night %>
+              </h2>
+              <h2 class="heading"><%= flat.number_of_guests %></h2>
+            </div>
+          </div>
+          <%= link_to "View details", flat_path(flat), class:"btn btn-dark btn-lg rounded-lg", id:"button"%>
+        </div>
+      <%# </div> %>
+    <% end %>
+    </div>
+  </div>
+</div>

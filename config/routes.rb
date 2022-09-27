@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'flats/index'
-  get 'flats/show'
-  get 'flats/new'
-  get 'flats/create'
-  get 'flats/update'
-  get 'flats/delete'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :flats, only: [:index, :show, :new, :create, :update, :destroy]
   # Defines the root path route ("/")
   # root "articles#index"
 end
