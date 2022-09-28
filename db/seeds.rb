@@ -9,24 +9,67 @@
 
 require "faker"
 
-puts "Creating flats"
+puts "Creating 5 flats"
 
-image_links = [
-  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
-  "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-  "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-]
-5.times do
-  Flat.create!(
-    name: Faker::Name.name,
-    address: Faker::Address.city,
-    description: Faker::TvShows::FamilyGuy.quote,
-    price_per_night: rand(100..5000),
-    number_of_guests: rand(1..20),
-    images: image_links.shuffle
-  )
-end
+puts "Creating first flat "
+
+Flat.create!(
+  name: "Beautiful flat in Geneva lakeside",
+  address: "Rue de Moillebeau 3C",
+  description: "This is a beautiful flat located right beside the lake with amazing views. It has 5 bedrooms and 5 toilets and a balcony in each room even in the toilet",
+  price_per_night: rand(100..5000),
+  number_of_guests: rand(1..20)
+)
+
+puts "Flat one created!"
+
+puts "Creating second flat"
+
+Flat.create!(
+  name: "One bedroom apartment in Geneva with beautiful views",
+  address: "Rue de Vermont 32",
+  description: "You are paying for the view. This apartment is worth is just for that",
+  price_per_night: rand(100..5000),
+  number_of_guests: rand(1..3)
+)
+
+puts "Second flat created!"
+
+puts "Creating third flat"
+
+Flat.create!(
+  name: "7 Bedroom apartment in Cologny Geneva with swimming pool",
+  address: "Rue de Cologny 31",
+  description: "This apartment is only for rich people. Alot of space for parties and also has a large swimming pool",
+  price_per_night: rand(7000..10000),
+  number_of_guests: rand(1..3)
+)
+
+puts "Third flat created!"
+
+puts "Creating fourth flat"
+
+Flat.create!(
+  name: "10 bedroom house located on top of Mont Saleve with beautiful views of geneva",
+  address: "Rue de Mont Saleve 69",
+  description: "Located on top of Mont Saleve, it offers magnificent views of Lake Geneva and amazing for hiking and skiing",
+  price_per_night: rand(5000..10000),
+  number_of_guests: rand(5..10)
+)
+
+puts "Done creating fourth flat"
+
+
+puts "Creating fifth flat"
+
+Flat.create!(
+  name: "2 bedroom apartment in Rue du Rhone 14",
+  address: "Rue du Rhone 14",
+  description: "Location right in center of town, near nightclubs so that you can dance among other sweaty people",
+  price_per_night: rand(100..500),
+  number_of_guests: 4
+)
+
+puts "Fifth and the last flat successfully created! "
 
 puts "Done creating flats"
