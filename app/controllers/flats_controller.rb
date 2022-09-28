@@ -8,12 +8,17 @@ class FlatsController < ApplicationController
   end
 
   def new
+    @flat = Flat.new
+  end
+
+  def create
+    @flat = Flat.new(flat_params)
+    @flat.save
+    redirect_to flat_path(@flat)
   end
 
   def edit
     @flat = Flat.find(params[:id])
-  end
-  def create
   end
 
   def update
@@ -23,6 +28,10 @@ class FlatsController < ApplicationController
   end
 
   def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to flats_path, status: :see_other
   end
 
   private
