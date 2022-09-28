@@ -1,13 +1,24 @@
+<div class="form-group container form-container">
 
-<%= simple_form_for (@flat) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.label :price_per_night %>
-  <%= f.number_field :price_per_night %>
-  <%= f.number_field :number_of_guests %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for (@flat), wrapper: :horizontal_form do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <br>
+    <%= f.label :price_per_night %>
+    <%= f.number_field :price_per_night %>
+
+    <br>
+    <%= f.label :number_of_guests %>
+    <%= f.number_field :number_of_guests %>
+
+    <br>
+    <%= f.submit %>
+  <% end %>
+</div>
